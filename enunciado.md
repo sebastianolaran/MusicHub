@@ -12,15 +12,7 @@ La aplicación debe tener una función para obtener los álbumes más vendidos q
 La aplicación debe tener una función para obtener los artistas más populares que tenga en cuenta la cantidad de veces que se han vendido sus álbumes.
 La aplicación debe tener una función para obtener las canciones más compartidas en redes sociales.
 La aplicación debe tener una función para obtener los álbumes más valorados por los usuarios.
-Entidades:
 
-Álbum (id, título, fecha de lanzamiento, precio, canciones, artistas, géneros, etiquetas)
-Canción (id, título, duración, género, álbumes, etiquetas, comentarios)
-Artista (id, nombre, biografía, álbumes, géneros)
-Género (id, nombre, canciones)
-Etiqueta (id, nombre, canciones)
-Comentario (id, texto, usuario, canción o álbum)
-Usuario (id, nombre, email, contraseña)
 Requisitos:
 
 Crear un proyecto Java que utilice Hibernate como proveedor de JPA.
@@ -31,6 +23,8 @@ Crear una interfaz de usuario que permita a los usuarios interactuar con la apli
 Implementar autenticación y autorización para que solo los usuarios registrados puedan dejar comentarios y realizar compras.
 Implementar un sistema de pago para que los usuarios puedan comprar álbumes y canciones.
 Implementar un sistema de notificaciones para que los usuarios reciban notificaciones cuando un artista nuevo se une a la plataforma o cuando un álbum nuevo es lanzado.
+
+
 Desafíos adicionales:
 
 Implementar un sistema de recomendaciones que sugiera álbumes y canciones a los usuarios basadas en sus preferencias y comportamiento.

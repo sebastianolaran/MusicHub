@@ -1,0 +1,40 @@
+Entidades:
+
+Álbum (id, título, fecha de lanzamiento, precio, canciones, artistas, géneros, etiquetas)
+Canción (id, título, duración, género, álbumes, etiquetas, comentarios)
+Artista (id, nombre, biografía, álbumes, géneros)
+Género (id, nombre, canciones)
+Etiqueta (id, nombre, canciones)
+Comentario (id, texto, usuario, canción o álbum)
+Usuario (id, nombre, email, contraseña)
+
+
+
+Asociaciones:
+
+Un álbum puede tener varias canciones y una canción puede pertenecer a varios álbumes (asociación many-to-many).
+Un artista puede tener varios álbumes y un álbum puede tener varios artistas (asociación many-to-many).
+Un género puede tener varias canciones y una canción puede pertenecer a varios géneros (asociación many-to-many).
+Una etiqueta puede tener varias canciones y una canción puede tener varias etiquetas (asociación many-to-many).
+
+Features pretendidos:
+
+Un usuario puede dejar comentarios en una canción o álbum.
+La aplicación debe permitir buscar álbumes por título, canciones por título o artista, y artistas por nombre.
+La aplicación debe tener una función para calcular el precio total de todos los álbumes de un artista.
+La aplicación debe tener una función para obtener las canciones más populares (las que más se han vendido).
+La aplicación debe tener una función para obtener los álbumes más vendidos que tenga en cuenta la cantidad de veces que se han vendido cada álbum.
+La aplicación debe tener una función para obtener los artistas más populares que tenga en cuenta la cantidad de veces que se han vendido sus álbumes.
+La aplicación debe tener una función para obtener las canciones más compartidas en redes sociales.
+La aplicación debe tener una función para obtener los álbumes más valorados por los usuarios.
+
+Service (o Business Logic Layer): Esta capa contiene la lógica de negocio de la aplicación. Es responsable de recibir las solicitudes de los usuarios, procesarlas y devolver las respuestas correspondientes. En este caso, el servicio se encarga de recibir las solicitudes relacionadas con la entidad Persona y delegar la lógica de acceso a datos al Repository.
+Repository (o Data Access Layer): Esta capa es responsable de interactuar con la base de datos para obtener, crear, actualizar y eliminar registros de la entidad Persona. El Repository encapsula la lógica de acceso a datos y proporciona una interfaz uniforme para interactuar con la base de datos.
+Persona (o Entity): Esta capa representa la entidad Persona, que es la representación de un objeto en la base de datos. La entidad Persona contiene los atributos y métodos necesarios para describir una persona.
+La comunicación entre las capas se produce de la siguiente manera:
+
+El servicio recibe una solicitud relacionada con la entidad Persona.
+El servicio delega la lógica de acceso a datos al Repository.
+El Repository interactúa con la base de datos para obtener, crear, actualizar o eliminar registros de la entidad Persona.
+El Repository devuelve los resultados de la operación al servicio.
+El servicio procesa los resultados y devuelve una respuesta al usuario.
