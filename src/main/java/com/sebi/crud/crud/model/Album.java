@@ -18,7 +18,7 @@ public class Album {
 
     @ManyToMany
     @JoinTable(
-            name = "album_cancion",
+            name = "albumes_canciones",
             joinColumns = @JoinColumn(name = "album_id"),
             inverseJoinColumns = @JoinColumn(name = "cancion_id")
     )
@@ -26,7 +26,7 @@ public class Album {
 
     @ManyToMany
     @JoinTable(
-            name = "album_artista",
+            name = "albumes_artistas",
             joinColumns = @JoinColumn(name = "album_id"),
             inverseJoinColumns = @JoinColumn(name = "artista_id")
     )
