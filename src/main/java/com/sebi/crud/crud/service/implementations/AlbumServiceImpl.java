@@ -8,6 +8,7 @@ package com.sebi.crud.crud.service.implementations;
 import java.util.List;
 import java.util.Optional;
 
+import com.sebi.crud.crud.model.Artista;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,4 +51,8 @@ public class AlbumServiceImpl implements AlbumService{
     public List<Album> buscarAlbumPorNombre(String titulo) {
         return albumRepository.findByTitulo(titulo);
     }
+
+
+
+
 }

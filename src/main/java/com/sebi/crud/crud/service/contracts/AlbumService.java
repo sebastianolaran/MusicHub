@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.sebi.crud.crud.model.Album;
+import com.sebi.crud.crud.model.Artista;
 
 public interface AlbumService {
 
@@ -21,5 +22,7 @@ public interface AlbumService {
     Optional<Album> buscarAlbumPorId(Long id);
 
     List<Album> buscarAlbumPorNombre(String nombre);
+
+
 
 }

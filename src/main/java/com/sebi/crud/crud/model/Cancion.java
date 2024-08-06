@@ -11,7 +11,7 @@ import java.util.List;
 public class Cancion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_cancion;
     private String titulo;
     private Long duracion;
 
@@ -24,11 +24,11 @@ public class Cancion {
     }
 
     public Long getId() {
-        return id;
+        return id_cancion;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_cancion = id;
     }
 
     public String getTitulo() {

@@ -20,8 +20,8 @@ public class Album {
     @ManyToMany
     @JoinTable(
             name = "albumes_canciones",
-            joinColumns = @JoinColumn(name = "album_id"),
-            inverseJoinColumns = @JoinColumn(name = "cancion_id")
+            joinColumns = @JoinColumn(name = "id_album"),
+            inverseJoinColumns = @JoinColumn(name = "id_cancion")
     )
     private List<Cancion> canciones;
 
@@ -29,9 +29,9 @@ public class Album {
 //    @JoinTable(
 //            name = "albumes_artistas",
 //            joinColumns = @JoinColumn(name = "album_id"),
-//            inverseJoinColumns = @JoinColumn(name = "artista_id")
+//           inverseJoinColumns = @JoinColumn(name = "artista_id")
 //    )
-//    private List<Artista> artistas;
+//   private List<Artista> artistas;
 
 
     public Album() {
@@ -69,7 +69,7 @@ public class Album {
         this.precio = precio;
     }
 
-
-
-
+    public List<Cancion> getCanciones() {
+        return canciones;
+    }
 }
