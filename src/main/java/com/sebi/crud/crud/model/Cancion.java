@@ -1,14 +1,23 @@
 package com.sebi.crud.crud.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.List;
 
+@Entity
 public class Cancion {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private Long duracion;
-    private List<Genero> generos;
-    private List<Album> albumes;
-    private List<Comentario> comentarios;
+
+    //private List<Genero> generos;
+    //private List<Album> albumes;
+    //private List<Comentario> comentarios;
 
 
     public Cancion() {
@@ -38,27 +47,5 @@ public class Cancion {
         this.duracion = duracion;
     }
 
-    public List<Genero> getGeneros() {
-        return generos;
-    }
 
-    public void setGeneros(List<Genero> generos) {
-        this.generos = generos;
-    }
-
-    public List<Album> getAlbumes() {
-        return albumes;
-    }
-
-    public void setAlbumes(List<Album> albumes) {
-        this.albumes = albumes;
-    }
-
-    public List<Comentario> getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentarios(List<Comentario> comentarios) {
-        this.comentarios = comentarios;
-    }
 }

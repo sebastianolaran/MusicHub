@@ -7,11 +7,12 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "album", schema = "db_musichub")
 public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_album;
     private String titulo;
     private String fecha_lanzamiento;
     private Long precio;
@@ -24,24 +25,24 @@ public class Album {
     )
     private List<Cancion> canciones;
 
-    @ManyToMany
-    @JoinTable(
-            name = "albumes_artistas",
-            joinColumns = @JoinColumn(name = "album_id"),
-            inverseJoinColumns = @JoinColumn(name = "artista_id")
-    )
-    private List<Artista> artistas;
+//    @ManyToMany
+//    @JoinTable(
+//            name = "albumes_artistas",
+//            joinColumns = @JoinColumn(name = "album_id"),
+//            inverseJoinColumns = @JoinColumn(name = "artista_id")
+//    )
+//    private List<Artista> artistas;
 
 
     public Album() {
     }
 
     public Long getId() {
-        return id;
+        return id_album;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_album = id;
     }
 
     public String getTitulo() {
