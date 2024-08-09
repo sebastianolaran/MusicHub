@@ -7,24 +7,27 @@ package com.sebi.crud.crud.service.contracts;
 
 import java.util.List;
 import java.util.Optional;
+
 import com.sebi.crud.crud.model.Album;
 import com.sebi.crud.crud.model.Cancion;
 
-/**
- *
- * @author sebastian2703
- */
+
 public interface CancionService {
 
     void eliminarCancion(Cancion cancion);
 
-    
-    void agregarAlbum(Album album);
+
+    void agregarCancion(Cancion cancion);
+
+    void asociarCancion(Cancion cancion, Album album);
 
 
-    List<Album> listarAlbum();
+    List<Cancion> listarCancion();
 
 
-    Optional<Album> buscarAlbumPorId(Long id);
+    Optional<Cancion> buscarCancionPorId(Long id);
+
+
+    List<Cancion> buscarCancionPorNombre(String nombre);
 
 }

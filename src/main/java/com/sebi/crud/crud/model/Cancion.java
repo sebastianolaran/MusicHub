@@ -1,9 +1,6 @@
 package com.sebi.crud.crud.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -15,8 +12,24 @@ public class Cancion {
     private String titulo;
     private Long duracion;
 
-    //private List<Genero> generos;
-    //private List<Album> albumes;
+    @ManyToMany
+    @JoinTable(
+            name = "canciones_genero",
+            joinColumns = @JoinColumn(name = "id_cancion"),
+            inverseJoinColumns = @JoinColumn(name = "id_genero")
+    )
+
+    private List<Genero> generos;
+
+    @ManyToMany
+    @JoinTable(
+            name = "albumes_artistas",
+            joinColumns = @JoinColumn(name = "id_cancion"),
+            inverseJoinColumns = @JoinColumn(name = "id_album")
+    )
+    private List<Album> albumes;
+
+
     //private List<Comentario> comentarios;
 
 

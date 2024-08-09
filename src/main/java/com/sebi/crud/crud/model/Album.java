@@ -3,7 +3,9 @@ package com.sebi.crud.crud.model;
 import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Objects;
 
 
 @Entity
@@ -25,13 +27,13 @@ public class Album {
     )
     private List<Cancion> canciones;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "albumes_artistas",
-//            joinColumns = @JoinColumn(name = "album_id"),
-//           inverseJoinColumns = @JoinColumn(name = "artista_id")
-//    )
-//   private List<Artista> artistas;
+    @ManyToMany
+    @JoinTable(
+            name = "albumes_artistas",
+            joinColumns = @JoinColumn(name = "id_album"),
+           inverseJoinColumns = @JoinColumn(name = "id_artista")
+    )
+   private List<Artista> artistas;
 
 
     public Album() {
@@ -71,5 +73,18 @@ public class Album {
 
     public List<Cancion> getCanciones() {
         return canciones;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Album album = (Album) o;
+        return Objects.equals(titulo, album.titulo) && Objects.equals(fecha_lanzamiento, album.fecha_lanzamiento) && Objects.equals(precio, album.precio);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, fecha_lanzamiento, precio);
     }
 }

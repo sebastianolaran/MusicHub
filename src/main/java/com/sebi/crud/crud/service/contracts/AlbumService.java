@@ -15,6 +15,7 @@ public interface AlbumService {
     
     void agregarAlbum(Album album);
 
+    Optional<Album> actualizarAlbum(Album album);
 
     List<Album>  listarAlbum();
 

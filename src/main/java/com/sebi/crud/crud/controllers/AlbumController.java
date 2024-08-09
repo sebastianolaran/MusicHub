@@ -50,7 +50,10 @@ public class AlbumController {
         return albumService.buscarAlbumPorNombre(titulo);
     }
 
-
+    @PostMapping("/actualizar")
+    public void actualizar(@RequestBody Album album) {
+        albumService.actualizarAlbum(album);
+    }
 
     @GetMapping("/canciones")
     public List<Cancion> obtenerCancionesDeAlbum(@RequestParam Long id) {

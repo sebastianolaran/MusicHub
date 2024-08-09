@@ -14,10 +14,6 @@ import java.util.List;
 public interface AlbumRepository extends CrudRepository<Album,Long> {
 
 
-//     @Transactional
-//    @Query(value = "INSERT INTO tabla_relacion (columna1_id, columna2_id) VALUES (:columna1Id, :columna2Id)")
-//    void agregarCancionAlbum();
-
     @Query("SELECT a FROM Album a WHERE a.titulo LIKE %:titulo%")
     List<Album> findByTitulo(@Param("titulo") String titulo);
 

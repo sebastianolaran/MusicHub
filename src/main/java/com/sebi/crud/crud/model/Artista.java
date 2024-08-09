@@ -1,13 +1,33 @@
 package com.sebi.crud.crud.model;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 
+
+@Entity
 public class Artista {
 
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_artista;
     private String nombre;
     private String biografia;
+
+    @ManyToMany
+    @JoinTable(
+            name = "albumes_artistas",
+            joinColumns = @JoinColumn(name = "id_artista"),
+            inverseJoinColumns = @JoinColumn(name = "id_album")
+    )
     private List<Album> albumes;
+
+    @ManyToMany
+    @JoinTable(
+            name = "artistas_genero",
+            joinColumns = @JoinColumn(name = "id_artista"),
+            inverseJoinColumns = @JoinColumn(name = "id_genero")
+    )
     private List<Genero> generos;
 
 
@@ -15,11 +35,11 @@ public class Artista {
     }
 
     public Long getId() {
-        return id;
+        return id_artista;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_artista = id;
     }
 
     public String getNombre() {
